@@ -32,8 +32,53 @@ Syntax highlighting is very useful. The next line we add will enable syntax high
 syntax on
 
 
+" Add numbers to each line on the left-hand side.
+set number
+
+" Highlight cursor line underneath the cursor horizontally.
+set cursorline
+
+" Highlight cursor line underneath the cursor vertically.
+set cursorcolumn
+
 
 Remap the capslock key to ESC key when launching VIM and reset it after closing VIM: 
 
 au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
+
+
+" PLUGINS ---------------------------------------------------------------- {{{
+
+" Plugin code goes here.
+
+" }}}
+
+
+" MAPPINGS --------------------------------------------------------------- {{{
+
+" Mappings code goes here.
+
+" }}}
+
+
+" VIMSCRIPT -------------------------------------------------------------- {{{
+
+" This will enable code folding.
+" Use the marker method of folding.
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+" More Vimscripts code goes here.
+
+" }}}
+
+
+" STATUS LINE ------------------------------------------------------------ {{{
+
+" Status bar code goes here.
+
+" }}}
